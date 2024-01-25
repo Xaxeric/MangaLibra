@@ -1,0 +1,28 @@
+{
+    "mecha": [
+        {
+            "id": 1,
+            "name": "Eva-01",
+            "price": 1000000,
+            "quantity": 50
+        },
+        {
+            "id": 2,
+            "name": "Juggernaut-86",
+            "price": 5000000,
+            "quantity": 40
+        },
+        {
+            "id": 3,
+            "name": "Eva-00",
+            "price": 100000,
+            "quantity": 40
+        },
+        {
+            "id": 4,
+            "name": "Juggernaut-2",
+            "price": 400000,
+            "quantity": 40
+        }
+    ]
+}
