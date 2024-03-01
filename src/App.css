@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
+
 #root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
@@ -15,5 +17,82 @@
 
 button:focus,
 button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: 10px auto -webkit-focus-ring-color;
 }
+
+@keyframes jumbo {
+    from { background-position: 50% 50%, 50% 50%; }
+    to { background-position: 350% 50%, 350% 50%; }
+}
+
+.jumbo {
+    --stripes: repeating-linear-gradient(
+        100deg,
+        #000 0%,
+        #000 7%,
+        transparent 10%,
+        transparent 12%,
+        #000 16%
+    );
+    --rainbow: repeating-linear-gradient(
+        100deg,
+        #60a5fa 10%,
+        #e879f9 15%,
+        #60a5fa 20%,
+        #5eead4 25%,
+        #60a5fa 30%
+    );
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 300%, 200%;
+    background-position: 50% 50%, 50% 50%;
+    filter: blur(10px) opacity(50%) saturate(200%);
+    mask-image: radial-gradient(ellipse at 100% 0%, black 40%, transparent 70%);
+    pointer-events: none;
+}
+
+.jumbo::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image: var(--stripes), var(--rainbow);
+    background-size: 200%, 100%;
+    animation: jumbo 60s linear infinite;
+    background-attachment: fixed;
+    mix-blend-mode: difference;
+}
+
+.text-shadow { text-shadow: 0px 0px 20px black; }
+
+body {
+    line-height: 1.6;
+    color: #fff;
+    background: #000;
+    font-size: 18px;
+}
+
+header {
+	nav {
+		transition: 1s all cubic-bezier(0.075, 0.82, 0.165, 1) .2s;
+		a {
+			color: #fff;
+			text-decoration: none;
+			font-weight: 700;
+			display: block;
+			padding: 10px 20px;
+			line-height: 1;
+			font-size: 13px;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+			transition: .3s all cubic-bezier(0.075, 0.82, 0.165, 1) .6s;
+		}
+	}
+}
+
+.container-character:hover .character-box {
+	filter: grayscale(100%) opacity(24%);
+}
+.container-character .character-box:hover {
+	filter: grayscale(0%) opacity(100%);
+}
+.character-box:nth-child(odd) { transform: translateY(-20px); }
+.character-box:nth-child(even) { transform: translateY(14px); }
