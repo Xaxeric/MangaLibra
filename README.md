@@ -1,5 +1,3 @@
-**MangaLibra README**
-
 # MangaLibra
 
 MangaLibra is a web application built with React, Tailwind CSS, and Vite, designed for browsing and searching manga.
